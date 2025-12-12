@@ -549,7 +549,7 @@ a {
   width: 100%;
   max-width: var(--width-header);
   margin: 0 auto;
-  padding: var(--padding-vertical-header) 0;
+  padding: 20px 0;
 
   display: flex;
   align-items: center;
@@ -560,12 +560,12 @@ a {
   display: flex;
   align-items: center;
   width: var(--width-header-logo);
-  height: var(--height-header-logo);
+  height: 33.64px;
 }
 
 .logo-img {
   width: 100%;
-  height: var(--height-header-logo);
+  height: 33.64px;
 }
 
 .gnb {
@@ -590,26 +590,26 @@ a {
   width: 100%;
   max-width: var(--width-container-inner);
   margin: 0 auto;
-  padding-top: var(--padding-top-hero);
-  min-height: var(--height-section-hero);
+  padding-top: 48px;
+  min-height: 1188px;
 }
 
 .hero-inner {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--gap-hero-inner);
+  gap: 369px;
 }
 
 .hero-main-title {
-  padding-top: var(--padding-top-hero-main-title);
+  padding-top: 132px;
   flex: 0 0 auto;
 }
 
 .hero-main-title-text {
   font-family: var(--font-family-martian-mono), monospace;
   font-weight: 700;
-  font-size: var(--font-hero-main-tiltle);
+  font-size: 158px;
   line-height: 1.15;
   letter-spacing: -11.06px;
 }
@@ -649,8 +649,8 @@ a {
   width: 100%;
   max-width: var(--width-container-inner);
   margin: 0 auto;
-  padding-top: var(--padding-top-about);
-  padding-bottom: var(--padding-bottom-about);
+  padding-top: 320px;
+  padding-bottom: 160px;
 }
 
 .about-inner {
@@ -659,7 +659,7 @@ a {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-about-inner);
+  gap: 80px;
 }
 
 /* desktop-section-about 공통 클래스 */
@@ -673,7 +673,7 @@ a {
 .desktop-section-about .section-main-title-text {
   font-family: var(--font-family-martian-mono), monospace;
   font-weight: 700;
-  font-size: var(--font-section-main-title);
+  font-size: 245px;
   line-height: 1;
   letter-spacing: -7.35px;
   color: var(--color-black);
@@ -685,15 +685,14 @@ a {
   left: -52px;
   top: -99px;
   background-color: var(--color-accent-main);
-  padding: var(--padding-top-deco-title) var(--padding-horizontal-deco-title)
-    var(--padding-bottom-deco-title) var(--padding-horizontal-deco-title);
+  padding: 30px 70px 20px 70px;
   transform: rotate(-13deg);
 }
 
 .desktop-section-about .section-deco-title-text {
   font-family: var(--font-family-pp-editorial-new), serif;
   font-weight: 400;
-  font-size: var(--font-deco-title);
+  font-size: 60px;
   line-height: 1;
   letter-spacing: -1.8px;
   color: var(--color-white);
@@ -717,7 +716,7 @@ a {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-about-main-text);
+  gap: 72px;
 }
 
 /* desktop-section-about 공통 클래스 */
@@ -725,7 +724,7 @@ a {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-section-text-box);
+  gap: 8px;
   align-items: center;
 }
 
@@ -738,7 +737,7 @@ a {
 .desktop-section-about .sub-title-text {
   font-family: var(--font-family-pp-editorial-new), serif;
   font-weight: 400;
-  font-size: var(--font-text-box-sub-title);
+  font-size: 60px;
   line-height: 1.28;
   letter-spacing: 0;
   color: var(--color-black);
@@ -778,7 +777,7 @@ a {
   max-width: 937px;
   margin: 0 auto;
   display: flex;
-  gap: var(--gap-about-bottom-box);
+  gap: 66px;
   align-items: flex-start;
 }
 
@@ -789,7 +788,7 @@ a {
 .edu-title-text {
   font-family: var(--font-family-pp-editorial-new), serif;
   font-weight: 400;
-  font-size: var(--font-edu-title);
+  font-size: 28px;
   line-height: 1.28;
   letter-spacing: -0.56px;
   color: var(--color-black);
@@ -800,7 +799,7 @@ a {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-about-edu-text);
+  gap: 10px;
 }
 
 .edu-list {
@@ -829,7 +828,7 @@ a {
 .edu-list-text p {
   font-family: var(--font-family-pretendard), sans-serif;
   font-weight: 400;
-  font-size: var(--font-edu-list-text);
+  font-size: 22px;
   line-height: 1.2;
   letter-spacing: -0.66px;
   color: var(--color-black);
@@ -842,14 +841,14 @@ a {
   width: 100%;
   max-width: var(--width-container-inner);
   margin: 0 auto;
-  padding: var(--padding-vertical-skill) 0;
+  padding: 200px 0;
 }
 
 .skill-frame {
   position: relative;
   width: 100%;
   max-width: var(--width-section-inner);
-  height: var(--height-skill-frame);
+  height: 1371px;
   margin: 0 auto;
 }
 
@@ -902,17 +901,16 @@ a {
   position: absolute;
   background-color: var(--color-white);
   border: 1px solid var(--color-black);
-  border-radius: var(--radius-skill-text);
-  padding: var(--padding-top-skill-text) var(--padding-horizontal-skill-text)
-    var(--padding-bottom-skill-text) var(--padding-horizontal-skill-text);
+  border-radius: 80px;
+  padding: 40px 100px 20px 100px;
   white-space: nowrap;
 }
 
 .skill-text-content {
   font-family: var(--font-family-pp-editorial-new), serif;
   font-weight: 200;
-  font-size: var(--font-skill-text);
-  line-height: var(--line-height-skill-text);
+  font-size: 100px;
+  line-height: 100px;
   letter-spacing: -3px;
   color: var(--color-black);
 }
@@ -966,8 +964,8 @@ a {
   width: 100%;
   max-width: var(--width-container-inner);
   margin: 0 auto;
-  padding-top: var(--padding-top-project);
-  padding-bottom: var(--padding-bottom-project);
+  padding-top: 315px;
+  padding-bottom: 0px;
 }
 
 
@@ -977,7 +975,7 @@ a {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-project-inner);
+  gap: 80px;
   align-items: center;
 }
 
@@ -993,15 +991,14 @@ a {
   left: -90px;
   top: -107px;
   background-color: var(--color-accent-sub);
-  padding: var(--padding-top-deco-title) var(--padding-horizontal-deco-title)
-    var(--padding-bottom-deco-title) var(--padding-horizontal-deco-title);
+  padding: 30px 70px 20px 70px;
   transform: rotate(-13deg);
 }
 
 .desktop-section-project .section-deco-title-text {
   font-family: var(--font-family-pp-editorial-new), serif;
   font-weight: 400;
-  font-size: var(--font-deco-title);
+  font-size: 60px;
   line-height: 1;
   letter-spacing: -1.8px;
   color: var(--color-white);
@@ -1010,7 +1007,7 @@ a {
 .desktop-section-project .section-main-title-text {
   font-family: var(--font-family-martian-mono), monospace;
   font-weight: 700;
-  font-size: var(--font-section-main-title);
+  font-size: 245px;
   line-height: 1;
   letter-spacing: -7.35px;
   color: var(--color-black);
@@ -1022,7 +1019,7 @@ a {
   max-width: var(--width-section-inner);
   display: flex;
   flex-direction: column;
-  gap: var(--gap-section-text-box);
+  gap: 8px;
   align-items: center;
 }
 
@@ -1035,7 +1032,7 @@ a {
 .desktop-section-project .sub-title-text {
   font-family: var(--font-family-pp-editorial-new), serif;
   font-weight: 400;
-  font-size: var(--font-text-box-sub-title);
+  font-size: 60px;
   line-height: 1.28;
   letter-spacing: 0;
   color: var(--color-black);
@@ -1054,7 +1051,7 @@ a {
 .desktop-section-project .sub-text-content {
   font-family: var(--font-family-pretendard), sans-serif;
   font-weight: 300;
-  font-size: var(--font-text-box-sub-text);
+  font-size: 18px;
   line-height: 1.22;
   letter-spacing: -0.54px;
   color: #686868;
@@ -1067,8 +1064,8 @@ a {
   width: 100%;
   max-width: var(--width-container-inner);
   margin: 0 auto;
-  padding-top: var(--padding-top-teamproject);
-  padding-bottom: var(--padding-bottom-teamproject);
+  padding-top: 80px;
+  padding-bottom: 0px;
 }
 
 .teamproject-title-img-box {
@@ -1076,7 +1073,7 @@ a {
   width: 100%;
   max-width: var(--width-section-inner);
   margin: 0 auto;
-  margin-bottom: var(--gap-teamproject);
+  margin-bottom: 80px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -1118,7 +1115,7 @@ a {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-teamproject-box);
+  gap: 84px;
 }
 
 .small-title-box {
@@ -1126,12 +1123,11 @@ a {
   max-width: var(--width-small-title-box);
   margin: 0 auto;
   background-color: var(--color-black);
-  border-radius: var(--radius-small-title-box);
-  padding: var(--padding-vertical-small-title-box)
-    var(--padding-horizontal-teamproject-list);
+  border-radius: 34px;
+  padding: 118px 80px;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-small-title-box);
+  gap: 32px;
   align-items: center;
 }
 
@@ -1143,7 +1139,7 @@ a {
 .small-main-title-text {
   font-family: var(--font-family-pp-editorial-new), serif;
   font-weight: 400;
-  font-size: var(--font-small-main-title);
+  font-size: 132px;
   line-height: 1;
   letter-spacing: 0;
   color: var(--color-white);
@@ -1154,7 +1150,7 @@ a {
   max-width: 457px;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-small-sub-box);
+  gap: 8px;
   align-items: center;
 }
 
@@ -1166,7 +1162,7 @@ a {
 .small-sub-title-text {
   font-family: var(--font-family-pp-editorial-new), serif;
   font-weight: 400;
-  font-size: var(--font-small-sub-tilte);
+  font-size: 30px;
   line-height: 1.28;
   letter-spacing: 0;
   color: var(--color-white);
@@ -1180,7 +1176,7 @@ a {
 .small-sub-text-content {
   font-family: var(--font-family-montserrat), sans-serif;
   font-weight: 400;
-  font-size: var(--font-small-sub-text);
+  font-size: 18px;
   line-height: 1.1;
   letter-spacing: -0.54px;
   color: var(--color-white);
@@ -1192,12 +1188,11 @@ a {
   margin: 0 auto;
   background-color: var(--color-white);
   border: 1px solid var(--color-black);
-  border-radius: var(--radius-teamproject-list-box);
-  padding: var(--padding-vertical-teamproject-list)
-    var(--padding-horizontal-teamproject-list);
+  border-radius: 30px;
+  padding: 57px 80px;
   display: flex;
   align-items: flex-start;
-  gap: var(--gap-teamproject-list);
+  gap: 250px;
 }
 
 
@@ -1206,7 +1201,7 @@ a {
   width: var(--width-teamproject-left-box);
   display: flex;
   flex-direction: column;
-  gap: var(--gap-teamproject-left-box);
+  gap: 28px;
 }
 
 .num-title {
@@ -1220,7 +1215,7 @@ a {
 .num-title-text {
   font-family: var(--font-family-martian-mono), monospace;
   font-weight: 400;
-  font-size: var(--font-num-title);
+  font-size: 100px;
   line-height: 1.2;
   letter-spacing: 0;
   color: var(--color-accent-main);
@@ -1230,7 +1225,7 @@ a {
   width: var(--width-teamproject-left-box-text-box);
   display: flex;
   flex-direction: column;
-  gap: var(--gap-teamproject-left-box-text-box);
+  gap: 16px;
 }
 
 .title-box {
@@ -1247,7 +1242,7 @@ a {
 .project-name-text {
   font-family: var(--font-family-pp-editorial-new), serif;
   font-weight: 400;
-  font-size: var(--font-project-name);
+  font-size: 40px;
   line-height: 1.28;
   letter-spacing: -1.2px;
   color: var(--color-black);
@@ -1260,7 +1255,7 @@ a {
 .big-caption-text {
   font-family: var(--font-family-montserrat), sans-serif;
   font-weight: 400;
-  font-size: var(--font-big-caption);
+  font-size: 18px;
   line-height: 1.22;
   letter-spacing: -0.9px;
   color: var(--color-black);
@@ -1280,7 +1275,7 @@ a {
 .en-text-content {
   font-family: var(--font-family-montserrat), sans-serif;
   font-weight: 400;
-  font-size: var(--font-en-text);
+  font-size: 24px;
   line-height: 1.1;
   letter-spacing: -0.72px;
   color: var(--color-black);
@@ -1293,7 +1288,7 @@ a {
 .kr-text-content {
   font-family: var(--font-family-pretendard), sans-serif;
   font-weight: 300;
-  font-size: var(--font-kr-text);
+  font-size: 18px;
   line-height: 1.1;
   letter-spacing: -0.54px;
   color: #686868;
@@ -1306,7 +1301,7 @@ a {
 .small-caption-text {
   font-family: var(--font-family-montserrat), sans-serif;
   font-weight: 400;
-  font-size: var(--font-small-caption);
+  font-size: 16px;
   line-height: 1.22;
   letter-spacing: -0.8px;
   color: var(--color-black);
@@ -1332,8 +1327,8 @@ a {
   width: 100%;
   max-width: var(--width-container-inner);
   margin: 0 auto;
-  padding-top: var(--padding-top-uiux);
-  padding-bottom: var(--padding-bottom-uiux);
+  padding-top: 320px;
+  padding-bottom: 240px;
 }
 
 .uiux-inner {
@@ -1342,7 +1337,7 @@ a {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-uiux-inner);
+  gap: 310px;
   align-items: center;
 }
 
@@ -1351,7 +1346,7 @@ a {
   max-width: var(--width-uiux-title);
   margin: 0 auto;
   background-color: var(--color-black);
-  border-radius: var(--radius-small-title-box);
+  border-radius: 34px;
 }
 
 .uiux-box {
@@ -1359,12 +1354,12 @@ a {
   max-width: var(--width-uiux-box);
   display: flex;
   flex-direction: column;
-  gap: var(--gap-uiux-box);
+  gap: 64px;
 }
 
 .list {
   display: flex;
-  gap: var(--gap-uiux-box-list);
+  gap: 10px;
   justify-content: space-between;
   width: 100%;
 }
@@ -1375,8 +1370,8 @@ a {
   max-width: var(--width-uiux-list-box);
   background-color: var(--color-white);
   border: 1px solid var(--color-black);
-  border-radius: var(--radius-uiux-list-box);
-  padding: var(--padding-vertical-list-box) 0;
+  border-radius: 40px;
+  padding: 25px 0;
 }
 
 .heart-box {
@@ -1384,8 +1379,8 @@ a {
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  height: var(--height-heart-box);
-  padding-right: var(--padding-right-heart-box);
+  height: 23.5px;
+  padding-right: 24px;
 }
 
 .heart-box img {
@@ -1413,13 +1408,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--padding-horizontal-uiux-name-box) 8px
-    var(--padding-horizontal-uiux-name-box);
+  padding: 0 24px 8px 24px;
 }
 
 .img-name span {
   font-family: var(--font-family-pp-editorial-new), serif;
-  font-size: var(--font-uiux-img-name);
+  font-size: 24px;
   line-height: 1.1;
   letter-spacing: -0.72px;
   color: var(--color-black);
@@ -1427,7 +1421,7 @@ a {
 
 .date span {
   font-family: var(--font-family-montserrat), sans-serif;
-  font-size: var(--font-uiux-date);
+  font-size: 16px;
   line-height: 1.1;
   letter-spacing: -0.48px;
   color: var(--color-black);
@@ -1441,8 +1435,8 @@ a {
   max-width: var(--width-contact);
   margin: 0 auto;
   background-color: var(--color-black);
-  padding-top: var(--padding-top-contact);
-  padding-bottom: var(--padding-bottom-contact);
+  padding-top: 160px;
+  padding-bottom: 90px;
 }
 
 .contact-inner {
@@ -1452,7 +1446,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--gap-contact-inner);
+  gap: 50px;
 }
 
 /* desktop-section-contact 공통 클래스 */
@@ -1467,8 +1461,8 @@ a {
 .desktop-section-contact .contact-title {
   font-family: var(--font-family-martian-mono);
   font-weight: 700;
-  font-size: var(--font-section-main-title);
-  line-height: var(--font-section-main-title);
+  font-size: 245px;
+  line-height: 245px;
   color: var(--color-white);
   text-align: center;
   letter-spacing: -7.35px;
@@ -1479,16 +1473,15 @@ a {
   left: 1067px;
   top: -97px;
   background-color: var(--color-accent-sub);
-  padding: var(--padding-top-deco-title) var(--padding-horizontal-deco-title)
-    var(--padding-bottom-deco-title);
+  padding: 30px 70px 20px;
   transform: rotate(8deg);
 }
 
 .desktop-section-contact .contact-deco-text {
   font-family: var(--font-family-pp-editorial-new);
   font-weight: 400;
-  font-size: var(--font-deco-title);
-  line-height: var(--font-deco-title);
+  font-size: 60px;
+  line-height: 60px;
   color: #fff5f5;
   letter-spacing: -1.8px;
 }
@@ -1498,7 +1491,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--gap-section-text-box);
+  gap: 8px;
 }
 
 .desktop-section-contact .sub-title {
@@ -1510,7 +1503,7 @@ a {
 .desktop-section-contact .contact-quote {
   font-family: var(--font-family-pp-editorial-new);
   font-weight: 400;
-  font-size: var(--font-text-box-sub-title);
+  font-size: 60px;
   line-height: 76.8px;
   color: var(--color-white);
   text-align: center;
@@ -1530,7 +1523,7 @@ a {
 .contact-sub {
   font-family: var(--font-family-montserrat);
   font-weight: 400;
-  font-size: var(--font-text-box-sub-text);
+  font-size: 18px;
   line-height: 21.94px;
   color: var(--color-white);
   text-align: center;
@@ -1539,7 +1532,7 @@ a {
 
 .contact-tel {
   background-color: var(--color-accent-bright);
-  padding: 25px 60px 20px;
+  padding: 40px 100px 20px 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1548,8 +1541,8 @@ a {
 .contact-tel-text {
   font-family: var(--font-family-pp-editorial-new);
   font-weight: 400;
-  font-size: var(--font-contact-tel);
-  line-height: var(--line-height-contact-tel);
+  font-size: 100px;
+  line-height: 100px;
   color: var(--color-black);
   text-align: center;
 }

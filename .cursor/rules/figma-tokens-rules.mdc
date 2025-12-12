@@ -1,128 +1,222 @@
 ---
 alwaysApply: true
 ---
-## 목적 (Purpose)
+# 🔹 1차 규칙: HTML / CSS / JavaScript
 
-아래 규칙은 Figma에서 추출한 tokens.json과 figma디자인을 참고로 하여 1차로 html + css + JavaScript로 랜딩페이지를 제작하고,그 결과물을 바탕으로 2차로 React + Tailwind 구조로 리팩토링한다. 
+## **1.1 제작 목적**
 
-1. 1차로 진행하는 정적 웹페이지는 html문서와 css문서를 각각 따로 작성하며, 애니메이션이 없는 레이아웃만으로 구성한다.
-2. Figma MCP Sever에 연결된 페이지 디자인의 레이어명, 오토레이아웃 구조를 잘 파악하여 html  MarkUp 을 작성한다. 
-3.  Figma 레이어명을 class name으로 지정한다.
-4. JavaScript를 활용한 동적요소는 구현하지 않는다. 단 요구사항이 있을 때 구현한다.
-
-이 규칙은 Figma에서 추출된 `tokens.json`과 피그마 MCP Sever에 연결된 페이지 디자인을 기반으로
-
-1️⃣ **정적 HTML/CSS/JavaScript 버전(1차)** 과
-
-2️⃣ **React + Tailwind 컴포넌트 버전(2차)**
-
-을 순차적으로 제작할 때 Cursor가 일관된 코드 구조를 유지하도록 정의한다.
+- Figma 시각적 구조를 그대로 반영한 **정적 페이지(Static Layout)** 를 먼저 완성한다.
+- **애니메이션, 스크롤 인터랙션 등 JS 기반 로직은 1차에서는 구현하지 않는다.**
+- 목표는 **정확한 레이아웃 / 박스 구조 / 클래스명 / 반응형 틀**이다.
 
 ---
 
-## ⚙️ 전체 흐름 개요
+## **1.2 HTML 규칙**
 
-| 단계 | 목표 | 사용 기술 | 주요 포인트 |
-| --- | --- | --- | --- |
-| 1차 | 정적 페이지 제작 | HTML + CSS + JavaScript | Figma 레이아웃 분석, 박스 구조 설계, 클래스 네이밍 일치 |
-| 2차 | 컴포넌트화 및 스타일 시스템 적용 | React + Tailwind | tokens.json → CSS 변수, 반응형 및 재사용 가능한 컴포넌트 구조 |
-
----
-
-## 🔹 1차 규칙: HTML / CSS / JavaScript
-
-### 1.1 제작 목적
-
-- Figma의 시각적 구조를 그대로 반영한 **정적 페이지(Static Layout)** 를 구현한다.
-- **JavaScript를 활용한 애니메이션이나  인터랙션은 구현하지 않는다.**
-- 오직 **정확한 레이아웃, 계층 구조, 클래스 네이밍, 기본 반응형 틀**까지만 완성한다.
-
-### 1.2 HTML 규칙
-
-1. **Figma의 레이어 구조를 그대로 HTML 박스로 변환**
+1. **Figma 레이어 구조 그대로 HTML에 대응시키기**
     - Frame → `<section>` 또는 `<div>`
     - Group → `<div>`
-    - Text → `<h1>`, `<p>` 등 시맨틱하게 대응
-2. **class 명은 Figma의 레이어명 기반으로 케밥케이스로 변환**
-    - 예: `Main_Title` → `main-title`
-    - 예: `Skill_Box` → `skill-box`
-3. **id 사용 금지**, 중복 방지를 위해 class만 사용.
-4. **BEM 구조 금지**, 단순하고 명료하게 유지 (예: `section-hero`, `text-main`).
-5. **이미지 삽입 :** 첨부된 이미지를 참고하여 이미지는 public > images 폴더에 있는 이미지 삽입
+2. **클래스 이름은 Figma 레이어명을  그대로 사용**
+3. `id` 사용 금지
+    - 오직 class만 사용한다.
+4. BEM 금지
+    - 구조 단순화: 예) `section-hero`, `hero-title`
+5. 이미지 삽입
+    - design에 포함된 이미지는 `public/images` 폴더를 기준으로 삽입한다.
 
-### 1.3 CSS 규칙
+---
 
-1. **모든 스타일은 Figma의 tokens.json 기반**
-    - 색상, 폰트, 여백, 라인하이트 등은 CSS 변수(`-font-mainTit`, `-color-decotit-1`) 사용.
-    - 기본 변수는 `:root` 에 정의하고 반응형은 `@media (max-width:1740px)/ @media (max-width:1024px)` / `@media (max-width:768px)` 로 override.
-2. 단위는 **px 고정**, `%`는 레이아웃 폭에서만 사용.
-3. **반응형 규칙**
-    - Desktop(≥1740px): 기본값
-    - Tablet(≤1024px): tokens의 Tablet 값 적용
-    - Mobile(≤768px): tokens의 Mobile 값 적용
-4. **폰트 로드**
-    - `@font-face` 로 모든 폰트를 명시 (`woff2`, `woff`, `ttf` 순서)
-    - 폰트 이름은 tokens의 `font-family`와 정확히 일치.
-    - 폰트는 구글 웹폰트를 연결하거나 public > font에 있는 폰트 사용
+## **1.3 CSS 규칙 (✨ 중요: tokens.json 기준 + var 최소화 정책 적용)**
 
-### 1.4 JavaScript 규칙
+### 1) **모든 스타일 값의 기준은 반드시 `tokens.json`이다.**
 
-1. JS는 요구사항을 제시할 때 작성
-    - 메뉴 토글, 스크롤 고정, 탭 전환 등 html/css로 **레이아웃이 완성된 후 제작자의 요구사항에** 맞게 **인터랙션 구현.**
-2. **라이브러리 사용 금지.** (순수 JS만)
-3. **DOM 구조 변경은 금지.** (레이아웃은 CSS에서 해결)
-4. 코드 구조는 다음과 같이 작성:
-    
-    ```jsx
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuBtn = document.querySelector(".menu-btn");
-      const nav = document.querySelector(".nav");
-      menuBtn.addEventListener("click", () => {
-        nav.classList.toggle("active");
-      });
-    });
-    
-    ```
-    
+- 색상, 폰트, 간격, 라인하이트 등은 **tokens.json의 value를 기준값으로 사용**한다.
+- 새로운 값 임의 생성 금지.
 
-## 🔹 2차 규칙: React + Tailwind 변환
+---
 
-### 2.1 목적
+### 2) **tokens.json 값의 실제 CSS 반영 방식은 2가지로 나눈다.**
 
-- 1차 HTML/CSS 구조를 유지하면서, 컴포넌트 단위로 분리하고 **tokens.json 기반의 CSS 변수 시스템**과 **Tailwind 반응형 레이아웃**을 결합한다.
+### **✔️ A. 전역 공통 토큰 → CSS 변수(var)로 사용**
 
-### 2.2 React 규칙
+아래 항목들은 전역에서 반복적으로 사용되므로
 
-1. HTML 구조는 그대로 유지, 단 **컴포넌트 단위로 분리**
-    - 예: `Header`, sec_Hero, sec_About, sec_Project, sec_TeamProject, sec_Uiux, footer
-    - 
-        
-        src/
-        ├─ components/
-        │  ├─ Header/
-        │  ├─ SecHero/
-        │  ├─ SecAbout/
-        │  ├─ SecProject/
-        │  ├─ SecTeamProject/
-        │  ├─ SecUiux/
-        │  └─ Footer/
-        
-2. `class` → `className` 변환
-3. CSS 대신 **`tokens.css` 변수**와 **Tailwind 유틸리티** 병행 사용
-예시
-    
-    <h2
-    className="font-mont text-decotit-1"
-    style={{ fontSize: 'var(--font-mainTit)', lineHeight: '1.1' }}
-    
-    > 
-    > 
-    
-    Hello World
-    </h2>
-    
-4. `fontFamily`, `fontSize`, lineHeight, color, margin, padding. backgroundColor는 tokens.json과 일치시킨다.
+`:root { }` 안에 CSS 변수로 정의하고 var()로 사용한다:
 
-5.{
+- 주요 색상 (background, main, accent, gray 등)
+- 폰트 패밀리
+- 큰 레이아웃 폭값 (container, inner width 등)
+
+```css
+:root {
+  /* colors */
+  --color-bg: #050505;
+  --color-main: #ff4b4b;
+  --color-gray: #5d5d5d;
+
+  /* layout */
+  --width-container: 1740px;
+  --width-section: 1740px;
+  --width-section-inner: 1200px;
+
+```
+
+---
+
+### **✔️ B. 섹션 전용 값 → CSS 변수로 만들지 않고 px로 직접 작성**
+
+예시:
+
+- 특정 섹션 gap
+- margin-top
+- padding-bottom
+- 특정 위치값(top, left)
+- 한 페이지에서 한 번만 쓰이는 크기/간격
+
+```css
+/* 👍 이상적인 형태 */
+.desktop-section-project .section-text-box {
+  max-width: var(--width-section-inner); /* 전역 토큰 → var() */
+  gap: 24px; /* 섹션 전용 값 → px로 직접 작성 */
+  font-size : 48px;
+  line-height: 1.4;
+  
+}
+
+```
+
+❌ 다음과 같은 변수 남용은 금지:
+
+```css
+--gap-section-text-box: 24px;
+gap: var(--gap-section-text-box);
+
+```
+
+---
+
+### 3) 단위 규칙
+
+- 기본은 **px**
+- `%`는 레이아웃 폭에서만 사용
+
+---
+
+### 4) 반응형 규칙
+
+- Desktop ≥ 1740px
+- Tablet ≤ 1024px
+- Mobile ≤ 768px
+
+반응형에서도 동일한 원칙 적용:
+
+- 전역 변수가 필요하면 var()
+- 섹션 전용 값은 px 직접 작성
+
+```css
+@media (max-width: 1024px) {
+  .desktop-section-project .section-text-box {
+    gap: 20px;
+  }
+}
+
+```
+
+---
+
+### 5) 폰트 로딩
+
+- `@font-face`로 직접 등록하거나
+- Google Fonts 사용
+- 이름은 tokens.json의 `"fontFamily"`와 정확히 일치해야 한다.
+
+---
+
+## **1.4 JavaScript 규칙**
+
+1. 1차에서는 JS는 “요구사항 있을 때만” 작성한다.
+2. 순수 JavaScript만 사용(libs 금지)
+3. 레이아웃 변경은 CSS로만 처리한다.
+4. 예시 구조:
+
+```jsx
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector(".menu-btn");
+  const nav = document.querySelector(".nav");
+
+  menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+});
+
+```
+
+---
+
+---
+
+# 🔹 2차 규칙: React + Tailwind 변환
+
+## **2.1 목적**
+
+- 1차 HTML/CSS 구조를 유지하면서
+- 컴포넌트화 + Tailwind + CSS 변수(tokens 기반)를 적용하여
+- 유지보수 가능한 디자인 시스템으로 만든다.
+
+---
+
+## 2.2 React 규칙
+
+1. HTML 구조는 그대로 유지하되, **컴포넌트 단위로 분리**
+
+```
+src/
+ ├─ components/
+ │   ├─ Header/
+ │   ├─ SecHero/
+ │   ├─ SecAbout/
+ │   ├─ SecProject/
+ │   ├─ SecTeamProject/
+ │   ├─ SecUiux/
+ │   └─ Footer/
+
+```
+
+1. `class` → `className` 로 변환
+2. 스타일 적용 방식
+    - Tailwind 유틸리티 우선
+    - 부족한 부분은 style 속성에 CSS var()로 보완
+
+예:
+
+```jsx
+<h2
+  className="font-mont text-decotit-1"
+  style={{ fontSize: "var(--font-mainTit)", lineHeight: "1.1" }}
+>
+  Hello World
+</h2>
+
+```
+
+1. 폰트, 색상, 간격 등은 tokens.json 값과 일치시킨다.
+2. MCP Server는 현재 폴더의 `tokens.json`을 기준 데이터로 사용한다:
+
+```json
+{
   "tokens": "./tokens.json"
 }
+
+```
+
+---
+
+# 📌 tokens.json 파일 저장 위치
+
+```
+my-react-app/
+│── src/
+│── public/
+│── index.html
+│── package.json
+│── tokens.json   ← 반드시 루트에 위치
