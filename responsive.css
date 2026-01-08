@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-/* =========================
-   TABLET 1024~768
-   ========================= */
-@media (max-width: 1024px) and (min-width: 769px) {
-  /* tablet tokens override (header/hero) */
-=======
 /* ============================================
    반응형 스타일 - Tablet & Mobile
    ============================================ */
@@ -13,7 +6,6 @@
    Large Desktop (≤1650px)
    ============================================ */
 @media (max-width: 1650px) {
->>>>>>> fccad1e (update style, responsive, vercel config)
   :root {
     /* Width - 레이아웃용 3개만 허용 */
     --width-container: 1650px;
@@ -1924,15 +1916,8 @@
     justify-content: flex-end;
     padding-right: 24px;
     position: absolute;
-<<<<<<< HEAD
-    top: 627px;
-    left: 61px;
-    width: 670px;
-    height: 728px;
-=======
     top: 25px;
     left: 0;
->>>>>>> fccad1e (update style, responsive, vercel config)
   }
 
   .desktop-section-uiux .heart-box img {
